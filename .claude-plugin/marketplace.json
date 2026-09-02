@@ -1,0 +1,29 @@
+{
+  "name": "onetwohour",
+  "owner": {
+    "name": "Onetwohour"
+  },
+  "metadata": {
+    "description": "Plugins that make Claude Code's work checkable: engineering guidance for how the work is done."
+  },
+  "plugins": [
+    {
+      "name": "engineering-doctrine",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/onetwohour/Engineering-Doctrine.git",
+        "path": "plugin"
+      },
+      "description": "Guides Claude Code to trace root causes, establish ownership and invariants, change only what the task requires, verify behavior with evidence, preserve existing work and user data, and review the result before claiming completion.",
+      "author": {
+        "name": "Onetwohour"
+      },
+      "keywords": [
+        "doctrine",
+        "engineering",
+        "review"
+      ],
+      "category": "workflow"
+    }
+  ]
+}
