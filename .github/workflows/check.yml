@@ -1,0 +1,20 @@
+name: Check
+
+# A typo here does not break a build, it breaks `/plugin install` for everyone
+# who has added this marketplace, and it does so quietly. There is nothing else
+# in this repository to notice it first.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      - run: node scripts/check-marketplace.mjs
