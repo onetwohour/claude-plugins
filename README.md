@@ -16,6 +16,8 @@
 
 Neither plugin installs anything else. `eck` bundles its runtime, so there is no
 separate binary to fetch, no toolchain to have, and no setup step before it works.
+It installs from a released archive that this marketplace pins by digest, and the
+install is refused if what arrives is not that file.
 
 ## Why this repository holds nothing but the marketplace
 

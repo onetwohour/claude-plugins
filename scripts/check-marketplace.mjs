@@ -41,12 +41,30 @@ for (const entry of marketplace.plugins ?? []) {
 
   // A relative source resolves inside this repository, which holds no plugins.
   const source = entry.source;
-  if (typeof source === "string") fail(`${where}: source ${source} resolves in this repository, which contains no plugins`);
-  else if (source?.source !== "git-subdir" || !source.url || !source.path) fail(`${where}: source must be git-subdir with a url and a path`);
+  if (typeof source === "string") {
+    fail(`${where}: source ${source} resolves in this repository, which contains no plugins`);
+  } else if (source?.source === "git-subdir") {
+    if (!source.url || !source.path) fail(`${where}: a git-subdir source needs a url and a path`);
+  } else if (source?.source === "archive") {
+    // What vouches for a git-subdir source is the repository it names: anyone
+    // can read what is being served there. A zip has no repository behind it,
+    // so its digest is the only thing saying the file under this URL is the
+    // file that was built. Claude Code treats sha256 as optional and this does
+    // not, because an unpinned archive is precisely the silent redirect the
+    // rest of this file exists to prevent.
+    if (!/^https:\/\/github\.com\/[^/]+\/[^/]+\/releases\/download\/[^/]+\/[^/]+$/.test(source.url ?? "")) {
+      fail(`${where}: an archive source must name a github release asset over https`);
+    }
+    if (!/^[0-9a-f]{64}$/i.test(source.sha256 ?? "")) {
+      fail(`${where}: an archive source needs a sha256, or its URL may serve anything`);
+    }
+  } else {
+    fail(`${where}: source must be git-subdir or archive`);
+  }
 }
 
 if (problems.length) {
   for (const problem of problems) console.error(problem);
   process.exit(1);
 }
-console.log(`${MARKETPLACE}: ${marketplace.plugins.length} plugins, every source pointing at the repository that builds it.`);
+console.log(`${MARKETPLACE}: ${marketplace.plugins.length} plugins, every source naming the repository that builds it or a digest of what it built.`);
