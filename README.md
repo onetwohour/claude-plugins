@@ -13,7 +13,3 @@
 /plugin install engineering-doctrine@onetwohour
 /plugin install eck@onetwohour
 ```
-
-Neither installs anything else: no Node, no Python, no toolchain, no setup step.
-`eck` bundles its runtime and installs from a released archive this marketplace
-pins by digest; the install is refused if what arrives is not that file.
