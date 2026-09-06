@@ -29,10 +29,10 @@
       "name": "eck",
       "source": {
         "source": "git-subdir",
-        "url": "https://github.com/onetwohour/ECK.git",
+        "url": "https://github.com/onetwohour/Epistemic-Compiler-Kernel.git",
         "path": "plugin"
       },
-      "description": "Answers questions about a codebase with the evidence behind them, says UNKNOWN when it does not know rather than guessing, and refuses a policy-sensitive edit until the agent declares what the change rests on. Runs the `eck` binary, which is not bundled: install it from the ECK releases.",
+      "description": "Compiles a project's notes, decisions and code into knowledge you can be held to: every answer carries what it rests on, an unreviewed claim is never reported as an agreed one, and nothing is written without someone seeing exactly what it would write. The runtime is bundled; nothing else is installed.",
       "author": {
         "name": "Onetwohour"
       },

@@ -7,15 +7,15 @@
 | Plugin | What it does | Source |
 | --- | --- | --- |
 | `engineering-doctrine` | Guides Claude Code to trace root causes, change only what the task requires, verify with evidence, and review before claiming completion. | [Engineering-Doctrine](https://github.com/onetwohour/Engineering-Doctrine) |
-| `eck` | Answers questions about a codebase with the evidence behind them, says `UNKNOWN` rather than guessing, and refuses a policy-sensitive edit until the agent declares what it rests on. | [ECK](https://github.com/onetwohour/ECK) |
+| `eck` | Compiles a project's notes, decisions and code into knowledge you can be held to: every answer carries what it rests on, and nothing is written without someone seeing exactly what it would write. | [Epistemic-Compiler-Kernel](https://github.com/onetwohour/Epistemic-Compiler-Kernel) |
 
 ```
 /plugin install engineering-doctrine@onetwohour
 /plugin install eck@onetwohour
 ```
 
-`eck` runs a compiled binary that is released separately; its
-[README](https://github.com/onetwohour/ECK#claude-code-plugin) says how to get one.
+Neither plugin installs anything else. `eck` bundles its runtime, so there is no
+separate binary to fetch, no toolchain to have, and no setup step before it works.
 
 ## Why this repository holds nothing but the marketplace
 
