@@ -30,7 +30,7 @@
       "source": {
         "source": "archive",
         "url": "https://github.com/onetwohour/Epistemic-Compiler-Kernel/releases/download/v0.1.0/eck-plugin-v0.1.0.zip",
-        "sha256": "60bb243671fd6aebcdcec76756d8099cdae8b48c62ee4c6b4c26a3b7b7aca8d4"
+        "sha256": "184325ce2df1b8f0182ff84043db0f6a8b95a9151c9ab4294cc928be6c23e1b0"
       },
       "description": "Compiles a project's notes, decisions and code into knowledge you can be held to: every answer carries what it rests on, an unreviewed claim is never reported as an agreed one, and nothing is written without someone seeing exactly what it would write. The runtime is bundled; nothing else is installed.",
       "author": {
