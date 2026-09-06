@@ -4,7 +4,7 @@
     "name": "Onetwohour"
   },
   "metadata": {
-    "description": "Engineering guidance that makes Claude Code's work checkable: root causes, ownership, evidence, and review before completion."
+    "description": "Plugins that make Claude Code's work checkable: engineering guidance for how the work is done, and an evidence-local knowledge compiler for what it is done from."
   },
   "plugins": [
     {
@@ -24,9 +24,26 @@
         "review"
       ],
       "category": "workflow"
+    },
+    {
+      "name": "eck",
+      "source": {
+        "source": "archive",
+        "url": "https://github.com/onetwohour/Epistemic-Compiler-Kernel/releases/download/v0.1.0/eck-plugin-v0.1.0.zip",
+        "sha256": "9175fbd0c112f4cf263b7e7ce4adc948095148ce10ca5156dbab463d5fe1d92c"
+      },
+      "description": "Compiles a project's notes, decisions and code into knowledge you can be held to: every answer carries what it rests on, an unreviewed claim is never reported as an agreed one, and nothing is written without someone seeing exactly what it would write. The runtime is bundled; nothing else is installed.",
+      "author": {
+        "name": "Onetwohour"
+      },
+      "keywords": [
+        "knowledge",
+        "provenance",
+        "evidence",
+        "grounding",
+        "verification"
+      ],
+      "category": "workflow"
     }
-  ],
-  "renames": {
-    "eck": null
-  }
+  ]
 }
