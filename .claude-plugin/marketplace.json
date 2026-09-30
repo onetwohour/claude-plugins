@@ -24,6 +24,26 @@
         "review"
       ],
       "category": "workflow"
+    },
+    {
+      "name": "architecture-governance",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/onetwohour/Architecture-Governance.git",
+        "path": "plugin"
+      },
+      "description": "Governs architecture and specification work with semantic ownership, explicit contracts, stable documentation rules, evidence-backed probes, and disciplined completion gates.",
+      "author": {
+        "name": "Onetwohour"
+      },
+      "keywords": [
+        "architecture",
+        "governance",
+        "specification",
+        "contracts",
+        "review"
+      ],
+      "category": "workflow"
     }
   ]
 }
